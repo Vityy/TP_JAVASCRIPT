@@ -9,9 +9,9 @@ function CalculMoyenne(a_array)
 
     for(let i = 0; i < a_array.length; i++)
     {
-        if(typeof a_array[i] == "string" || typeof a_array[i] == "boolean")
+        if(typeof a_array[i] != "number")
         {
-            return ("Erreur: l'élément à l'index " + i + " n'est pas un nombre.");
+            throw "Erreur: l'élément à l'index " + i + " n'est pas un nombre.";
         }
         else
         {
@@ -27,7 +27,42 @@ const array2 = [2, -7, 23, 58, 7, 19, "Mama mia"];
 const array3 = [];
 const stringText = "Holy Mother!";
 
-console.log(CalculMoyenne(array1));
-// console.log(CalculMoyenne(array2));
-// console.log(CalculMoyenne(array3));
-// console.log(CalculMoyenne(stringText));
+try
+{
+    let moyenne = CalculMoyenne(array1);
+    console.log(moyenne);
+}
+catch(e)
+{
+    console.log(e);
+}
+
+try
+{
+    let moyenne = CalculMoyenne(array2);
+    console.log(moyenne);
+}
+catch(e)
+{
+    console.log(e);
+}
+
+try
+{
+    let moyenne = CalculMoyenne(array3);
+    console.log(moyenne);
+}
+catch(e)
+{
+    console.log(e);
+}
+
+try
+{
+    let moyenne = CalculMoyenne(stringText);
+    console.log(moyenne);
+}
+catch(e)
+{
+    console.log(e);
+}
