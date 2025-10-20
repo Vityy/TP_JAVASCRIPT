@@ -31,3 +31,43 @@ function InitialiserDonnees()
         listePays.innerHTML += `${pays.nom} ${pays.valeur} ${pays.pourcentage} ${pays.code}` + "<br/>" + "<br/>";
     }
 }
+
+function InitialiserTableau()
+{
+    const titre = document.querySelector("#titre");
+    const annee = document.querySelector("#annee");
+    const corpsTableau = document.querySelector("#corps");
+
+    titre.innerHTML = `${data.polluant} en ${data.unite}`;
+    annee.innerHTML = `${data.annee}`;
+
+    for(let i = 0; i < data.pays.length; i++)
+    {
+        const pays = data.pays[i];
+        let lignePays = document.createElement("tr");
+
+        let colonneDrapeau = document.createElement("td");
+        colonneDrapeau.className = "drapeau";
+        let drapeau = document.createElement("img");
+        drapeau.src = `https://flagcdn.com/24x18/${pays.code}.png`;
+        colonneDrapeau.append(drapeau);
+        lignePays.append(colonneDrapeau);
+
+        let colonneNom = document.createElement("td");
+        colonneNom.className = "nom";
+        colonneNom.innerHTML = `${pays.nom}`;
+        lignePays.append(colonneNom);
+
+        let colonneValeur = document.createElement("td");
+        colonneValeur.className = "center";
+        colonneValeur.innerHTML = `${pays.valeur}`;
+        lignePays.append(colonneValeur);
+
+        let colonnePourcentage = document.createElement("td");
+        colonnePourcentage.className = "center";
+        colonnePourcentage.innerHTML = `${pays.pourcentage}`;
+        lignePays.append(colonnePourcentage);
+
+        corpsTableau.append(lignePays);
+    }
+}
