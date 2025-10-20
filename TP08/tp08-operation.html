@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function DoAdd(num1, num2)
+            {
+                console.log("Le résultat de l’addition est :" + (num1 + num2));
+            }
+            
+            function DoSub(num1, num2)
+            {
+                console.log("Le résultat de la soustraction est :" + (num1 - num2));
+            }
+
+            function DoMult(num1, num2)
+            {
+                console.log("Le résultat de la multiplication est :" + (num1 * num2));
+            }
+
+            function DoDiv(num1, num2)
+            {
+                console.log("Le résultat de la division est :" + (num1 / num2));
+            }
+
+            function DoOpperation()
+            {
+                const num1 = parseFloat(document.querySelector("#input-1").value);
+                const num2 = parseFloat(document.querySelector("#input-2").value);
+
+                if(isNaN(num1) || isNaN(num2))
+                {
+                    throw "Vous devez saisir un nombre";
+                }
+
+                const operator = document.querySelector("#operator").value;
+
+                if(operator == "+")
+                {
+                    DoAdd(num1, num2);
+                }
+                else if(operator == "-")
+                {
+                    DoSub(num1, num2);
+                }
+                else if(operator == "*")
+                {
+                    DoMult(num1, num2);
+                }
+                else if(operator == "/")
+                {
+                    DoDiv(num1, num2);
+                }
+            }
+
+            function TryDoOpperation()
+            {
+                try
+                {
+                    DoOpperation();
+                }
+                catch(e)
+                {
+                    console.error(e);
+                }
+            }
+
+            let button;
+
+            function GetButton()
+            {
+                button = document.querySelector("#validation-button");
+                button.addEventListener("click", TryDoOpperation);
+            }
+
+            document.addEventListener("DOMContentLoaded", GetButton);
+
+        </script>
+        <title>OPERATION</title>
+    </head>
+    <body>
+        <input type="text" id="input-1" required/>
+        <input type="text" id="input-2" required/>
+        <select id="operator">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <button id="validation-button">Validate</button>
+    </body>
+</html>
