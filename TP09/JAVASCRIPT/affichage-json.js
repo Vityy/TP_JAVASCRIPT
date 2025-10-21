@@ -21,7 +21,6 @@ function InitialiserTableau()
     const corpsTableau = document.querySelector("#corps");
 
     titre.innerHTML = `Pays les plus polluants pour le ${data.polluant} (${data.unite}) en ${data.annee}`;
-    // annee.innerHTML = `${data.annee}`;
 
     for(let i = 0; i < data.pays.length; i++)
     {
