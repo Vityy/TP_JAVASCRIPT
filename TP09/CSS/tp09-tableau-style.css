@@ -1,0 +1,38 @@
+table {
+    width: 100%;
+
+    th {
+        font-size: 25px;
+    }
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    height: 35px;
+}
+
+.nom,
+.drapeau {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.drapeau {
+    width: 10%;
+}
+
+.nom {
+    width: 50%;
+}
+
+.valeur,
+.pourcentage {
+    width: 20%;
+}
