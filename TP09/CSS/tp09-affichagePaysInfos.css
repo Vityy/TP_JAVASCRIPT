@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+
+    th {
+        font-size: 20px;
+    }
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid;
+    height: 35px;
+    text-align: center;
+}
+
+th,
+td {
+    width: 25%;
+}
+
+.nom-pays,
+.nom-capitale,
+.nom-region {
+    text-align: left;
+}
+
+.drapeau {
+    width: 15px;
+    height: 15px;
+}
